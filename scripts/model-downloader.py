@@ -6,7 +6,7 @@ import requests
 import werkzeug
 
 root = "-d /content"
-sd_path = "/stable-diffusion-webui"
+sd_path = "/sd-webui"
 
 def folder(content_type):
     if content_type == "Checkpoint":
