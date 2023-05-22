@@ -16,31 +16,31 @@ vae_path = "/models/VAE"
 lora_path = "/models/Lora"
 lycoris_path = "/models/LyCORIS"
 
-print("Model Downloader: Checking Directories...")
+print("Model Downloader New Version: Checking Directories...")
 if not os.path.exists(f"{sd_path}{checkpoint_path}"):
    os.makedirs(f"{sd_path}{checkpoint_path}")
-   print ("Model Downloader: Creating Checkpoint Folder")
+   print ("Model Downloader New Version: Creating Checkpoint Folder")
 if not os.path.exists(f"{sd_path}{hypernetwork_path}"):
    os.makedirs(f"{sd_path}{hypernetwork_path}")
-   print ("Model Downloader: Creating Hypernetwork Folder")
+   print ("Model Downloader New Version: Creating Hypernetwork Folder")
 if not os.path.exists(f"{sd_path}{embedding_path}"):
    os.makedirs(f"{sd_path}{embedding_path}")
-   print ("Model Downloader: Creating TextualInversion/Embeddings Folder")
+   print ("Model Downloader New Version: Creating TextualInversion/Embeddings Folder")
 if not os.path.exists(f"{sd_path}{aestheticembedding_path}"):
    os.makedirs(f"{sd_path}{aestheticembedding_path}")
-   print ("Model Downloader: Creating AestheticGradient Folder")
+   print ("Model Downloader New Version: Creating AestheticGradient Folder")
 if not os.path.exists(f"{sd_path}{vae_path}"):
    os.makedirs(f"{sd_path}{vae_path}")
-   print ("Model Downloader: Creating VAE Folder")
+   print ("Model Downloader New Versionr: Creating VAE Folder")
 if not os.path.exists(f"{sd_path}{lora_path}"):
    os.makedirs(f"{sd_path}{lora_path}")
-   print ("Model Downloader: Creating LoRA Folder")
+   print ("Model Downloader New Version: Creating LoRA Folder")
 if not os.path.exists(f"{sd_path}{lycoris_path}"):
    os.makedirs(f"{sd_path}{lycoris_path}")
-   print ("Model Downloader: Creating LyCORIS Folder")
+   print ("Model Downloader New Version: Creating LyCORIS Folder")
 else:
      pass 
-print("Model Downloader: all Directories already Created.")
+print("Model Downloader New Version: all Directories already Created.")
 
 def folder(content_type):
     if content_type == "Checkpoint":
@@ -184,6 +184,6 @@ def on_ui_tabs():
                    filename.submit(run, commands, out_text)
 
     downloader.queue(concurrency_count=5)
-    return (downloader, "Model Downloader", "downloader"),
+    return (downloader, "Model Downloader New Version", "downloader"),
     
 script_callbacks.on_ui_tabs(on_ui_tabs)
