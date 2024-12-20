@@ -5,6 +5,10 @@ import werkzeug
 import gradio as gr
 from urllib.parse import urlparse
 from modules import script_callbacks
+from gradio import Image
+
+image = Image()  # Or however you initialize your image object
+image = image.resize((156, 234))  # Resize image
 
 sd_path = os.getcwd()
 default = "Set as Default"
@@ -157,7 +161,10 @@ def on_ui_tabs():
               with gr.Column():
                    info = gr.Markdown(value="<font size=2><p><b>URL</b>: <br> <b>Folder Path</b>: <br> <b>File Name</b>:<br> <b>Preview Model</b>:</p>", label="Information")
                    image = gr.Image(value=f"{sd_path}/html/card-no-preview.png", show_label=False)
-                   image.style(width=256, height=384)
+                   image = image.resize((156, 234))  # Resize the image
+                   image = gr.Image(image_data)
+                   image.resize((156, 234))  # Adjust the size of the image
+                   
               content_type1.change(combine, [url, content_type1, filename], commands)
               url.change(combine, [url, content_type1, filename], commands)
               url.change(get_filename_from_url, url, filename)
