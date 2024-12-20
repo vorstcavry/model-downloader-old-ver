@@ -6,7 +6,7 @@ import subprocess
 def checking():
     try:
         subprocess.run("aria2c", stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        subprocess.run('pip', 'install', '--upgrade' 'gradio', check=True)
+        subprocess.run('pip', 'install', '--upgrade', 'gradio', check=True)
 'pip', 'install', '--upgrade'
         return True
     except FileNotFoundError:
